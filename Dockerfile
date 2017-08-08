@@ -17,6 +17,8 @@ RUN add-apt-repository "deb https://dl.yarnpkg.com/debian/ stable main"
 
 RUN apt-get update
 RUN apt-get install -yf docker-ce yarn
+RUN curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
 RUN mkdir /usr/local/nvm
 ENV NVM_DIR /usr/local/nvm
